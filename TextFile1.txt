@@ -77,22 +77,19 @@ MAUI (maui)
             //si estan true, desactivan los botones (tienen notifyPropertyChanged)
             -bool botonJoinPulsado
             -bool botonCancelarPulsado
+
+            -string playerName
+            -string selectedGroup
             
             #rg properties
             +List<Grupo> Grupos
             +bool BotonJoinPulsado
             +bool BotonCancelarPulsado
+            +string playerName
+            +string selectedGroup
             
             #rg constructor
             +JoinPageVM() //constructor que se inicializa al ir a esta pestaña
-
-
-            
-            #rg funciones
-
-
-
-
 
             #rg funciones asincronas
             +Conectarse
@@ -123,8 +120,13 @@ MAUI (maui)
 
 
 
-            #rg funciones
-            +Conectarse
+            #rg funciones de llamada
+            +async Task Conectarse()
+
+
+
+            -async Task ElegirOpcionAsync(string opcion)
+
 
 
         VictoriaPageVM:MiNotifyChanged

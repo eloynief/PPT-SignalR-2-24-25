@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.JoinPage"
+             Title="JoinPage"
+             xmlns:miVM="clr-namespace:MAUI.ViewModels">
+
+    <ContentPage.BindingContext>
+        <miVM:JoinPageVM></miVM:JoinPageVM>
+    </ContentPage.BindingContext>
+    
+    
+    
+    <VerticalStackLayout>
+        <Label 
+            Text="PPT"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry x:Name="txtNombre" 
+               Placeholder="Ingresa tu nombre"
+               Text="{Binding PlayerName, Mode=TwoWay}"
+               FontSize="18"
+               TextColor="red"/>
+
+        <Entry x:Name="txtGrupo" 
+               Placeholder="Ingresa el grupo"
+               Text="{Binding SelectedGroup, Mode=TwoWay}"
+               FontSize="18"
+               TextColor="red"/>
+        
+        
+        <Button Text="Unirse al Juego"
+                FontSize="20"
+                BackgroundColor="Green"
+                TextColor="White"
+                Command="{Binding JoinPulsadoCommand}" />
+
+        <Button Text="Cancelar"
+                FontSize="20"
+                BackgroundColor="Red"
+                TextColor="White"
+                Command="{Binding CancelarPulsadoCommand}" />
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

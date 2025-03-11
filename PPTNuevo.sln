@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "txt", "txt", "{83641DC7-B6D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP", "ASP\ASP.csproj", "{4F5D78FF-F9B3-4471-B416-63D2A87519C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAUI", "MAUI\MAUI.csproj", "{76EC5012-20F6-4500-984A-F3E089CBDE1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FUNC", "FUNC\FUNC.csproj", "{3C68B1BF-8315-46AF-A1C6-BCFC298B123B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,16 @@ Global
 		{4F5D78FF-F9B3-4471-B416-63D2A87519C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F5D78FF-F9B3-4471-B416-63D2A87519C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F5D78FF-F9B3-4471-B416-63D2A87519C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76EC5012-20F6-4500-984A-F3E089CBDE1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76EC5012-20F6-4500-984A-F3E089CBDE1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76EC5012-20F6-4500-984A-F3E089CBDE1E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{76EC5012-20F6-4500-984A-F3E089CBDE1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76EC5012-20F6-4500-984A-F3E089CBDE1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76EC5012-20F6-4500-984A-F3E089CBDE1E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3C68B1BF-8315-46AF-A1C6-BCFC298B123B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C68B1BF-8315-46AF-A1C6-BCFC298B123B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C68B1BF-8315-46AF-A1C6-BCFC298B123B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C68B1BF-8315-46AF-A1C6-BCFC298B123B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
