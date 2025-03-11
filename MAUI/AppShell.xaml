@@ -9,7 +9,17 @@
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:JoinPage}"
+        Route="joinpage" />
+    
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:GamePage}"
+        Route="gamepage" />
+    
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:VictoriaPage}"
+        Route="victoriapage" />
 
 </Shell>

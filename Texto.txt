@@ -7,7 +7,7 @@ ENT (biblioteca clases)
         - string grupo
         - int puntos
         - int victorias
-        - string eleccion
+        - string eleccion //decidi ponerlo asi ya que puedo sacar la imagen del boton en base a esto
 
         region properties
         + string Nombre
@@ -54,9 +54,6 @@ FUNC (biblioteca clases)
         + static Grupo ObtenerGrupoDeListadoGrupos()
 
 
-    EnlaceJuego
-        + static string enlace
-
 
 
 
@@ -69,24 +66,21 @@ MAUI (maui)
         JoinPageVM:MiNotifyChanged //para el join
             
             #rg atributos
-            - HubConnection connection //se usara para conectarse
             -List<Grupo> grupos
-
-
 
             //si estan true, desactivan los botones (tienen notifyPropertyChanged)
             -bool botonJoinPulsado
             -bool botonCancelarPulsado
 
-            -string playerName
-            -string selectedGroup
+            -string nombreJugador
+            -string grupoJuego
             
             #rg properties
             +List<Grupo> Grupos
             +bool BotonJoinPulsado
             +bool BotonCancelarPulsado
-            +string playerName
-            +string selectedGroup
+            +string NombreJugador
+            +string GrupoJuego
             
             #rg constructor
             +JoinPageVM() //constructor que se inicializa al ir a esta pestaña
@@ -150,7 +144,11 @@ MAUI (maui)
 
             #rg funciones asincronas
             +Conectarse
-
+        
+        General
+            Conexiones
+            
+            + static HubConnection conexion //se usara para conectarse
 
 Views
     JoinPage
