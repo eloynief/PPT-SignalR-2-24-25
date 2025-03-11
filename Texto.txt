@@ -117,7 +117,9 @@ MAUI (maui)
             #rg funciones de llamada
             +async Task Conectarse()
 
-
+            -async Task eligePiedra
+            -async Task eligePapel
+            -async Task eligeTijera
 
             -async Task ElegirOpcionAsync(string opcion)
 
@@ -154,5 +156,3 @@ Views
     JoinPage
     GamePage
     VictoriaPage
-
-//EL JUEGO ES DE 2 JUGADORES
