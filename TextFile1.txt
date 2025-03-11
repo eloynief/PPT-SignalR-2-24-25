@@ -1,0 +1,158 @@
+PROYECTOS:
+
+ENT (biblioteca clases)
+	Jugador
+	    region atributos
+        - string nombre
+        - string grupo
+        - int puntos
+        - int victorias
+        - string eleccion
+
+        region properties
+        + string Nombre
+        + string Grupo
+        + int Puntos
+        + int Victorias
+        + string Eleccion
+
+        region constructors
+        +Jugador() //inicializa todo a un valos por defecto
+
+        +Jugador(nombre, grupo, puntos, victorias, eleccion) //con params
+
+
+    Grupo
+	    region atributos
+        - string nombre
+        - list Jugador jugadores
+
+        region properties
+        + string Nombre
+        + list Jugador jugadores
+
+        region constructors
+        +Grupo() //valores por defecto
+        +Grupo(nombre,jugadores)
+        
+
+
+
+ASP(SignalR Hub) (proyecto ASP) //descargo Microsoft.AspNetCore.SignalR.Client
+    
+    GameHub:Hub
+        - async Task JoinGroup
+        - async Task LeaveGroup
+
+        - async Task ElegirOpcion(grupo,jugador,opcion) //el jugador del grupo escoge una accion
+        - async Task VerGanador(grupo) //vemos quien gana del grupo
+
+
+FUNC (biblioteca clases)
+    Funciones
+        + static Jugador ObtenerJugadorDelGrupo(Grupo grupo)
+        + static Grupo ObtenerGrupoDeListadoGrupos()
+
+
+    EnlaceJuego
+        + static string enlace
+
+
+
+
+MAUI (maui)
+    MiNotifyChanged: INotifyPropertyChanged //clase que se usara como notifyChanged
+
+    DelegateCommand: ICommand //clase para los commands de los botones del juego
+    
+    ViewModels
+        JoinPageVM:MiNotifyChanged //para el join
+            
+            #rg atributos
+            - HubConnection connection //se usara para conectarse
+            -List<Grupo> grupos
+
+
+
+            //si estan true, desactivan los botones (tienen notifyPropertyChanged)
+            -bool botonJoinPulsado
+            -bool botonCancelarPulsado
+            
+            #rg properties
+            +List<Grupo> Grupos
+            +bool BotonJoinPulsado
+            +bool BotonCancelarPulsado
+            
+            #rg constructor
+            +JoinPageVM() //constructor que se inicializa al ir a esta pestaña
+
+
+            
+            #rg funciones
+
+
+
+
+
+            #rg funciones asincronas
+            +Conectarse
+
+
+        GamePageVM:MiNotifyChanged
+            
+            #rg atributos
+            -Jugador jugadorYo
+            -Jugador jugadorRival //se mostrarian los puntos y el nombre de este en la vista
+
+            -bool opcionElegida
+
+            #rg properties
+            +Jugador jugadorYo
+            +Jugador jugadorRival 
+            +bool OpcionElegida
+            
+            #region commands //estarian los 3 botones de elegir la opcion (piedra papel tijeras)
+            //Opciones 
+            +DelegateCommand ElegirPiedraCommand 
+            +DelegateCommand ElegirPapelCommand
+            +DelegateCommand ElegirTijeraCommand
+
+
+            #rg constructor
+            +GamePageVM() //constructor que se inicializa al ir a esta pestaña
+
+
+
+            #rg funciones
+            +Conectarse
+
+
+        VictoriaPageVM:MiNotifyChanged
+        
+            #rg atributos
+            -Grupo grupo //grupo del juego (tiene los jugadores)
+
+            -string ganador
+
+
+
+            
+            #rg properties
+            +Grupo Grupo
+            +string Ganador
+
+            
+            #region commands //boton para irse
+            +DelegateCommand IrseJuegoCommand
+            
+
+            #rg funciones asincronas
+            +Conectarse
+
+
+Views
+    JoinPage
+    GamePage
+    VictoriaPage
+
+//EL JUEGO ES DE 2 JUGADORES
